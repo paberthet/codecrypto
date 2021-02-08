@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+#include "tp1.c"
 
 unsigned ANF(unsigned x);
 int poids(unsigned x);
@@ -12,11 +12,16 @@ int main(void)
     printf("Poids de 0 : %d \n",poids(0));
     printf("Poids de 15 : %d \n",poids(15));
     printf("Poids de 16 : %d \n",poids(16));
+    unsigned x = 0b01100101;
+    PrintBinary(ANF(x));
 }
 
-unsigned ANF(unsigned x, int len)
+unsigned ANF(unsigned x) //ici x sur un octet
 {
-    if(len ==1)
+    x ^=((x>>4)&0x0f);
+    x ^=((x>>2)&0x33);
+    x ^=((x>>1)&0x55);
+    return x;
 }
 
 int poids(unsigned x)
