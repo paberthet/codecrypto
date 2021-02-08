@@ -16,11 +16,13 @@ int main(void)
     PrintBinary(ANF(x));
 }
 
-unsigned ANF(unsigned x) //ici x sur un octet
+unsigned ANF(unsigned x) //ici on pourrait ameliorer en mettant une boucle for prenant la longueur totale et construisant le filtre a chaque etape
 {
-    x ^=((x>>4)&0x0f);
-    x ^=((x>>2)&0x33);
-    x ^=((x>>1)&0x55);
+    x ^=((x>>16)&0x0000ffff);
+    x ^=((x>>8)&0x00ff00ff);
+    x ^=((x>>4)&0x0f0f0f0f);
+    x ^=((x>>2)&0x33333333);
+    x ^=((x>>1)&0x55555555);
     return x;
 }
 
@@ -35,7 +37,7 @@ int poids(unsigned x)
     return poids;
 }
 
-int degbool(unsigned x)
+int degbool(unsigned x,int nbclauses)
 {
     
 }
