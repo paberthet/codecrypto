@@ -11,3 +11,5 @@ TP2-2 : LFSR in F2
 TP3 : more advanced ops on F2 polynomials (inverse, gcd...)
 
 TP4 : ANF
+
+TP5 : Fourier, Walsh Hadamard, résilience
