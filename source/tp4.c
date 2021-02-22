@@ -14,6 +14,7 @@ int main(void)
     printf("Poids de 16 : %d \n",poids(16));
     unsigned x = 0b01100101;
     PrintBinary(ANF(x));
+    printf("Degré de l ANF : %d \n",degbool(x));
 }
 
 unsigned ANF(unsigned x) //ici on pourrait ameliorer en mettant une boucle for prenant la longueur totale et construisant le filtre a chaque etape
@@ -37,7 +38,32 @@ int poids(unsigned x)
     return poids;
 }
 
-int degbool(unsigned x,int nbclauses)
+int degbool(unsigned x)
 {
-    
+    int i = 0;
+    int max = 0;
+    while(x>0)
+    {
+        i++;
+        x = (x >> 1);
+        if((x & 1) ==1)
+        {
+            if(max < poids(i))
+                max = poids(i);
+        }
+    }
+    return max;
 }
+
+int ProdScal1(long unsigned x, long unsigned y)
+{
+    return poids((x&y))%2;
+}
+
+int Parite(unsigned x)
+{
+    return poids(x)%2;
+}
+
+ 
+
