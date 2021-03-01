@@ -1,5 +1,5 @@
 # codecrypto
-Source codes for cryptography. Basic functions such as Euclidean division, LFSR, boolean functions etc..
+Source codes for cryptography. Basic functions such as Euclidean division, LFSR, boolean functions etc... THOSE ARE NOT SAFE IMPLEMENTATIONS!
 
 
 TP1 : Basic operations on F2 polynomials
@@ -13,3 +13,7 @@ TP3 : more advanced ops on F2 polynomials (inverse, gcd...)
 TP4 : ANF
 
 TP5 : Fourier, Walsh Hadamard, résilience
+
+TP6 : Entiers de Gauss
+
+TP7 : Fibonacci
