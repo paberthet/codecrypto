@@ -6,8 +6,12 @@
 int* Fourier(int* f, int n);
 int* Walsh(int* f, int n);
 void PrintTab(int* tab, int size);
+int* TruthTable();
+int resilience(int* f, int n);
 int poids(unsigned x);
 int degbool(unsigned x);
+int ProdScal1(long unsigned x, long unsigned y);
+int Parite(unsigned x);
 
 
 int main(void)
@@ -23,6 +27,10 @@ int main(void)
     PrintTab(Fourier(x,8),8);
     printf("Walsh : ");
     PrintTab(Walsh(y,8),8);
+    int * tt = TruthTable();
+    PrintTab(tt,8*32);
+    printf("Resilience : %d \n", resilience(tt,32*8));
+
 }
 
 void PrintTab(int* tab, int size)
@@ -36,7 +44,7 @@ void PrintTab(int* tab, int size)
     printf("]\n");
 }
 
-int* Fourier(int* f, int n)
+int* Fourier(int* f, int n) //ATTENTION : avec l usage de pointeurs, f VA ETRE MODIFIE
 {
     if(n == 1)
     {
@@ -72,6 +80,19 @@ int* Walsh(int* f, int n)
     return Fourier(f,n);
 }
 
+int resilience(int*f, int n)
+{
+    int* a = Walsh(f,n);
+    PrintTab(a,n);
+    int res = poids(n-1);
+    for(int i = 0; i<n;i++)
+    {
+        if(a[i] != 0 && poids(i) <= res)
+            res = poids(i) -1;
+    }
+    return res;
+}
+
 int poids(unsigned x)
 {
     int poids = 0;
@@ -102,13 +123,30 @@ int degbool(unsigned x)
 
 int ProdScal1(long unsigned x, long unsigned y)
 {
-    return poids((x&y))%2;
+    return (Parite((x&y)));
 }
 
 int Parite(unsigned x)
 {
-    return poids(x)%2;
+    return (poids(x)&&1);
 }
 
- 
+unsigned int Pi(unsigned x)
+{
+    int pi[8] = {0x0b, 0x07, 0x1e, 0x1b, 0x1d, 0x0f, 0xff, 0x17};
+    return pi[x];
+}
 
+int* TruthTable()
+{
+    int tmp[32*8] = {0};
+    int* tt = tmp;
+    for(int i = 0; i <8 ; i++)
+    {
+        for(int j = 0; j <32; j++)
+        {
+            tt[32*i +j] = ProdScal1(Pi(i), j);
+        }
+    }
+    return tt;
+}
