@@ -17,3 +17,5 @@ TP5 : Fourier, Walsh Hadamard, résilience
 TP6 : Entiers de Gauss
 
 TP7 : Fibonacci
+
+TP8 : Euclidian division (binary)
