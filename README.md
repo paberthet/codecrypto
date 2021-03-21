@@ -18,4 +18,10 @@ TP6 : Entiers de Gauss
 
 TP7 : Fibonacci
 
-TP8 : Euclidian division (binary)
+TP8-1 : Euclidian division (binary)
+
+TP8-2 : Exponentiation (binary)
+
+TP9-1 : Residu quadratique
+
+TP9-2 : Test de primalité
