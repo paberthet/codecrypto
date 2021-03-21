@@ -16,7 +16,7 @@ void GaussInv(GaussType *i, GaussType x);
 void GaussSoustrait(GaussType *d, GaussType x, GaussType y);
 void GaussDivise(GaussType *d, GaussType x, GaussType y);
 void GaussPuiss(GaussType *r, GaussType x, unsigned int n);
-
+/*
 int main()
 {
     printf("Exo1 \n");
@@ -76,7 +76,7 @@ int main()
     GaussAffiche(r,1);
     return 0;
 }
-
+*/
 void GaussAffiche(GaussType x, int cr)
 {
     printf("(%d %s %d V5 ) / %d%s", x.a, x.b <0?"-":"+",x.b<0?-x.b:x.b,x.d,cr?"\n":" ");
