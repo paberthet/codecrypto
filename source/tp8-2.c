@@ -9,7 +9,7 @@ long unsigned expmod1(long unsigned a, long unsigned e, long unsigned n);
 long unsigned expmod2(long unsigned a, long unsigned e, long unsigned n);
 long unsigned expmod3(long unsigned a, long unsigned e, long unsigned n);
 
-
+/*
 int main(){
 	printf("%d",mulmod(2,9,5));
 	printf("\n %d",sqrmod1(5,10));
@@ -20,7 +20,7 @@ int main(){
 	printf("\n%d",expmod3(2,3,10));
 	return 0;
 }
-
+*/
 long unsigned mulmod(long unsigned a, long unsigned m, long unsigned n)
 {
 	long unsigned res = 0;

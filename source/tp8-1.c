@@ -4,6 +4,7 @@
 unsigned EuclideBinaire1(unsigned a, unsigned b);
 unsigned EuclideBinaire2(unsigned a, unsigned b);
 int BezoutBinaire(int* pu,int* pv, int a, int b);
+/*
 int main()
 {
     printf("Exo1:\n");
@@ -17,7 +18,7 @@ int main()
     printf("Bezout de 16100 et 10000 : u = %d, v = %d, p = %d\n",u,v,p);
     return 0;
 }
-
+*/
 unsigned EuclideBinaire1(unsigned a, unsigned b)
 {
     unsigned d = 1;
