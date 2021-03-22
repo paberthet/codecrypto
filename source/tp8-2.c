@@ -11,7 +11,13 @@ long unsigned expmod3(long unsigned a, long unsigned e, long unsigned n);
 
 
 int main(){
+	printf("%d",mulmod(2,9,5));
+	printf("\n %d",sqrmod1(5,10));
+	printf("\n %d", sqrmod2(5,10));
 	
+	printf("\n%d",expmod1(2,3,10));
+	printf("\n%d",expmod2(2,3,10));
+	printf("\n%d",expmod3(2,3,10));
 	return 0;
 }
 
@@ -37,26 +43,18 @@ long unsigned sqrmod1(long unsigned a, long unsigned n)
 
 long unsigned sqrmod2(long unsigned a, long unsigned n)
 {
-	long unsigned res = 0x0;
-	for(int i = 0; i <32; i ++)
-	{
-		if(a&1)
-		{
-			res ^= (1<<(2*i));
-		}
-		a>>=1;
-	}
-	return(res%n);
+	return((a*a)%n);
 }
 
 long unsigned expmod1(long unsigned a, long unsigned e, long unsigned n)
 {
-	if(e==0)
-		return 1;
+	if(e==1)
+		return a%n;
+	unsigned long b = sqrmod2(a,n);
 	if((e&1)==0)
-		return sqrmod2(expmod1(a,(e>>1),n),n);
+		return expmod1(b,(e>>1),n);
 	if(e&1)
-		return mulmod(a,expmod1(a,e-1,n),n);
+		return mulmod(a,expmod1(b,((e-1)>>1),n),n);
 }
 long unsigned expmod2(long unsigned a, long unsigned e, long unsigned n)
 {
@@ -64,10 +62,15 @@ long unsigned expmod2(long unsigned a, long unsigned e, long unsigned n)
 	for(int i =0; i <32 ; i++)
 	{
 		if(e&1)
+		{
 			res = mulmod(res,a,n);
-		e>>=1;
+			e =((e^1)>>1);
+		}
+		else
+			e>>=1;
 		a = sqrmod2(a,n);
 	}
+	return res;
 }
 
 long unsigned expmod3(long unsigned a, long unsigned e, long unsigned n)
@@ -76,9 +79,14 @@ long unsigned expmod3(long unsigned a, long unsigned e, long unsigned n)
 	while(e!=0)
 	{
 		if(e&1)
+		{
 			res = mulmod(res,a,n);
-		e>>=1;
+			e = ((e^1)>>1);
+		}
+		else
+			e>>=1;
 		a = sqrmod2(a,n);
 	}
+	return res;
 }
 
