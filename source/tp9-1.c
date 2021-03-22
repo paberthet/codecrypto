@@ -1,6 +1,6 @@
 #include "tp8-1.c"
 #include "tp8-2.c"
-#define SWAP(a,b) (((a) ^= (b)), ((b) ^= (a)), ((a) ^= (b)))
+#define SWAP(a,b) (((a) ^= (b)), ((b) ^= (a)), ((a) ^= (b))) //on va l'utiliser pour la réciprocité quadratique
 
 int last_one(long unsigned a);
 int jacobi(unsigned long  p, unsigned long q);
@@ -31,7 +31,7 @@ int jacobi(unsigned long a, unsigned long n)
 	int result = 1;
 	while(a)
 	{
-		while((a&1)==0)
+		while((a&1)==0) //cas où a pair, on pourrait employer aussi last_one ici avec un compteur
 		{
 			a >>=1;
 			if((n&7)==3 || (n&7)==5) result = -result;
