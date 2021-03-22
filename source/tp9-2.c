@@ -1,7 +1,7 @@
 #include "tp9-1.c"
 
 void TestSV(int rep, unsigned long n);
-
+/*
 int main(){
 	TestSV(11,121);
 	TestSV(12,137);
@@ -11,7 +11,7 @@ int main(){
 	TestSV(15,225);
 	return 0;
 }
-
+*/
 void TestSV(int rep, unsigned long n)
 {
 	printf("\n------------------------Number : %d-----------------------\n",n);
