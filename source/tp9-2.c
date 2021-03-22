@@ -14,7 +14,7 @@ int main(){
 
 void TestSV(int rep, unsigned long n)
 {
-	printf("\n---------------------------------------------------\n");
+	printf("\n------------------------Number : %d-----------------------\n",n);
 	if((n&1)==0)
 	{
 		perror("Parity error");

@@ -50,7 +50,7 @@ long unsigned expmod1(long unsigned a, long unsigned e, long unsigned n)
 {
 	if(e==1)
 		return a%n;
-	unsigned long b = sqrmod2(a,n);
+	unsigned long b = sqrmod1(a,n);
 	if((e&1)==0)
 		return expmod1(b,(e>>1),n);
 	if(e&1)
@@ -68,7 +68,7 @@ long unsigned expmod2(long unsigned a, long unsigned e, long unsigned n)
 		}
 		else
 			e>>=1;
-		a = sqrmod2(a,n);
+		a = sqrmod1(a,n);
 	}
 	return res;
 }
@@ -85,7 +85,7 @@ long unsigned expmod3(long unsigned a, long unsigned e, long unsigned n)
 		}
 		else
 			e>>=1;
-		a = sqrmod2(a,n);
+		a = sqrmod1(a,n);
 	}
 	return res;
 }
