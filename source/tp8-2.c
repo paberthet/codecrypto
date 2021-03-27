@@ -8,7 +8,6 @@ long unsigned sqrmod2(long unsigned a, long unsigned n);
 long unsigned expmod1(long unsigned a, long unsigned e, long unsigned n);
 long unsigned expmod2(long unsigned a, long unsigned e, long unsigned n);
 long unsigned expmod3(long unsigned a, long unsigned e, long unsigned n);
-
 /*
 int main(){
 	printf("%d",mulmod(2,9,5));
@@ -18,9 +17,18 @@ int main(){
 	printf("\n%d",expmod1(2,3,10));
 	printf("\n%d",expmod2(2,3,10));
 	printf("\n%d",expmod3(2,3,10));
+
+	printf("\n\nApplication a la crypto\n");
+	printf("exposant public : %d\n",3);
+	printf("message : %d\n",0x5555);
+	printf("module : %d\n",64507);
+	long unsigned c = expmod3(0x5555,3,64507);
+	printf("chiffre : %d\n",c);
+	printf("dechiffre : %d\n",expmod3(c,42667,64507));
 	return 0;
 }
 */
+
 long unsigned mulmod(long unsigned a, long unsigned m, long unsigned n)
 {
 	long unsigned res = 0;
