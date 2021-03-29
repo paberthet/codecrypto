@@ -4,7 +4,7 @@ int TestMillerRabin(unsigned long a, unsigned long n);
 
 int main()
 {
-	printf("Test : %d",TestMillerRabin(12,53));
+	printf("Test : %d\n",TestMillerRabin(12,53));
 	return 0;
 }
 
