@@ -24,4 +24,6 @@ TP8-2 : Exponentiation (binary)
 
 TP9-1 : Residu quadratique
 
-TP9-2 : Test de primalité
+TP9-2 : Test de primalité de Solovay-Strassen
+
+TP10 : Temoin de Miller Rabin
