@@ -1,5 +1,5 @@
 # codecrypto
-Source codes for cryptography. Basic functions such as Euclidean division, LFSR, boolean functions etc... THOSE ARE NOT SAFE IMPLEMENTATIONS!
+Source codes for cryptography, first year of Master degree, MIC, Université Paris-Cité. Basic functions such as Euclidean division, LFSR, boolean functions etc... THOSE ARE NOT SAFE IMPLEMENTATIONS!
 
 
 TP1 : Basic operations on F2 polynomials
